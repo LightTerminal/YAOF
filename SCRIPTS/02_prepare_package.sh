@@ -240,6 +240,8 @@ find ./target/linux/ -name "config-${KERNEL_VERSION}" | xargs -I{} sh -c "echo '
 
 ### 最后的收尾工作 ###
 # Lets Fuck
+sed -i 's/192.168.1.1/192.168.2.1/' package/base-files/files/bin/config_generate
+
 mkdir -p package/base-files/files/usr/bin
 cp -rf ../OpenWrt-Add/fuck ./package/base-files/files/usr/bin/fuck
 # 生成默认配置及缓存
